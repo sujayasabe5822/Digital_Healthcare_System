@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navBar.css">
+</head>
+<body>
+<div id="navbar"></div>
+<div class="dashboard-container">
+    
+    <h2 style="color: white;">Patient Dashboard</h2>
+
+    <div class="card">
+        <h3>Book Appointment</h3>
+
+        <input type="text" id="doctorName" placeholder="Doctor Name">
+        <input type="date" id="date">
+        <input type="time" id="time">
+        <div class="btn-center">
+
+        <div class="btn-center">
+            <button class="small-btn"  onclick="bookAppointment()" >Book</button>
+        </div>
+        
+        
+    </div>
+  
+</div>
+<div class="card">
+        <h3>Your Appointments</h3>
+        <div id="appointments"></div>
+    </div>
+<script src="js/patient.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
