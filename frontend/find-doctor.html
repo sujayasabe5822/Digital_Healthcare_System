@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Doctor</title>
+    <link rel="stylesheet" href="css/doctor.css">
+    <link rel="stylesheet" href="css/navBar.css">
+</head>
+
+<body>
+
+<!-- FIXED TOP SECTION -->
+<div class="top-fixed">
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Doctors</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search Doctor by Name or Speciality">
+            <button onclick="searchDoctor()">Search</button>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <div class="doctor-header">
+        <h2>Available Doctors</h2>
+        <a href="find-doctor.html" class="reset-btn">Reset</a>
+    </div>
+
+</div>
+
+<!-- SCROLLABLE DOCTOR LIST -->
+<div class="doctor-scroll">
+    <div class="doctor-container" id="doctorContainer">
+        <!-- JS will load doctors here -->
+    </div>
+</div>
+
+<script src="js/doctor-data.js"></script>
+<script src="js/find-doctor.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

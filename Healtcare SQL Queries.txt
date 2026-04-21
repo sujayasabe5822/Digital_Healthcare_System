@@ -1,0 +1,230 @@
+-- CREATE DATABASE
+CREATE DATABASE healthcare_db;
+USE healthcare_db;
+
+-- ======================
+-- 1. PATIENTS TABLE
+-- ======================
+CREATE TABLE Patients (
+    patient_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    gender VARCHAR(10),
+    dob DATE,
+    phone VARCHAR(15),
+    address TEXT,
+    blood_group VARCHAR(5)
+);
+
+INSERT INTO Patients (name, gender, dob, phone, address, blood_group) VALUES
+('Rahul Sharma', 'Male', '2000-05-10', '9876543210', 'Pune', 'O+'),
+('Priya Patil', 'Female', '1998-08-15', '9123456780', 'Mumbai', 'A+'),
+('Amit Verma', 'Male', '1995-03-20', '9988776655', 'Delhi', 'B+'),
+('Sneha Joshi', 'Female', '2001-11-25', '9090909090', 'Pune', 'AB+'),
+('Karan Mehta', 'Male', '1999-07-30', '8888888888', 'Nashik', 'O-');
+
+SELECT * FROM Patients;
+
+-- ======================
+-- 2. DOCTORS TABLE
+-- ======================
+CREATE TABLE Doctors (
+    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    specialization VARCHAR(100),
+    phone VARCHAR(15),
+    experience INT,
+    consultation_fee DECIMAL(10,2)
+);
+
+INSERT INTO Doctors (name, specialization, phone, experience, consultation_fee) VALUES
+('Dr. Sharma', 'Cardiology', '9000000001', 10, 500),
+('Dr. Patil', 'Dermatology', '9000000002', 8, 300),
+('Dr. Mehta', 'Orthopedic', '9000000003', 12, 600),
+('Dr. Khan', 'Neurology', '9000000004', 15, 800),
+('Dr. Singh', 'Pediatrics', '9000000005', 7, 400);
+
+SELECT * FROM Doctors;
+
+-- ======================
+-- 3. DEPARTMENTS
+-- ======================
+CREATE TABLE Departments (
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(100)
+);
+
+INSERT INTO Departments (department_name) VALUES
+('Cardiology'),
+('Dermatology'),
+('Orthopedic'),
+('Neurology'),
+('Pediatrics');
+
+SELECT * FROM Departments;
+
+-- ======================
+-- 4. DOCTOR_DEPARTMENT
+-- ======================
+CREATE TABLE Doctor_Department (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT,
+    department_id INT,
+    FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id),
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+
+INSERT INTO Doctor_Department (doctor_id, department_id) VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);
+
+SELECT * FROM Doctor_Department;
+
+-- ======================
+-- 5. APPOINTMENTS
+-- ======================
+CREATE TABLE Appointments (
+    appointment_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT,
+    doctor_id INT,
+    appointment_date DATE,
+    appointment_time TIME,
+    status VARCHAR(20),
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id),
+    FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id)
+);
+
+INSERT INTO Appointments (patient_id, doctor_id, appointment_date, appointment_time, status) VALUES
+(1,1,'2026-04-10','10:00:00','Booked'),
+(2,2,'2026-04-11','11:00:00','Completed'),
+(3,3,'2026-04-12','12:00:00','Booked'),
+(4,4,'2026-04-13','01:00:00','Cancelled'),
+(5,5,'2026-04-14','02:00:00','Booked');
+
+SELECT * FROM Appointments;
+
+-- ======================
+-- 6. PRESCRIPTIONS
+-- ======================
+CREATE TABLE Prescriptions (
+    prescription_id INT AUTO_INCREMENT PRIMARY KEY,
+    appointment_id INT,
+    notes TEXT,
+    date DATE,
+    FOREIGN KEY (appointment_id) REFERENCES Appointments(appointment_id)
+);
+
+INSERT INTO Prescriptions (appointment_id, notes, date) VALUES
+(1,'Fever treatment','2026-04-10'),
+(2,'Skin allergy','2026-04-11'),
+(3,'Bone fracture','2026-04-12'),
+(4,'Migraine','2026-04-13'),
+(5,'Child fever','2026-04-14');
+
+SELECT * FROM Prescriptions;
+
+-- ======================
+-- 7. MEDICINES
+-- ======================
+CREATE TABLE Medicines (
+    medicine_id INT AUTO_INCREMENT PRIMARY KEY,
+    medicine_name VARCHAR(100),
+    price DECIMAL(10,2)
+);
+
+INSERT INTO Medicines (medicine_name, price) VALUES
+('Paracetamol', 50),
+('Ibuprofen', 80),
+('Amoxicillin', 120),
+('Cetirizine', 60),
+('Azithromycin', 150);
+
+SELECT * FROM Medicines;
+
+-- ======================
+-- 8. PRESCRIPTION_MEDICINES
+-- ======================
+CREATE TABLE Prescription_Medicines (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    prescription_id INT,
+    medicine_id INT,
+    dosage VARCHAR(50),
+    duration VARCHAR(50),
+    FOREIGN KEY (prescription_id) REFERENCES Prescriptions(prescription_id),
+    FOREIGN KEY (medicine_id) REFERENCES Medicines(medicine_id)
+);
+
+INSERT INTO Prescription_Medicines (prescription_id, medicine_id, dosage, duration) VALUES
+(1,1,'2 times/day','5 days'),
+(2,2,'1 time/day','3 days'),
+(3,3,'2 times/day','7 days'),
+(4,4,'1 time/day','4 days'),
+(5,5,'2 times/day','5 days');
+
+SELECT * FROM Prescription_Medicines;
+
+-- ======================
+-- 9. MEDICAL RECORDS
+-- ======================
+CREATE TABLE Medical_Records (
+    record_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_id INT,
+    diagnosis TEXT,
+    treatment TEXT,
+    allergies TEXT,
+    record_date DATE,
+    FOREIGN KEY (patient_id) REFERENCES Patients(patient_id)
+);
+
+INSERT INTO Medical_Records (patient_id, diagnosis, treatment, allergies, record_date) VALUES
+(1,'Fever','Rest & medicines','None','2026-04-10'),
+(2,'Allergy','Antihistamine','Dust','2026-04-11'),
+(3,'Fracture','Surgery','None','2026-04-12'),
+(4,'Migraine','Painkillers','None','2026-04-13'),
+(5,'Cold','Syrup','Pollen','2026-04-14');
+
+SELECT * FROM Medical_Records;
+
+-- ======================
+-- 10. PAYMENTS
+-- ======================
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    appointment_id INT,
+    amount DECIMAL(10,2),
+    payment_method VARCHAR(50),
+    payment_status VARCHAR(20),
+    FOREIGN KEY (appointment_id) REFERENCES Appointments(appointment_id)
+);
+
+INSERT INTO Payments (appointment_id, amount, payment_method, payment_status) VALUES
+(1,500,'UPI','Paid'),
+(2,300,'Cash','Paid'),
+(3,600,'Card','Pending'),
+(4,800,'UPI','Paid'),
+(5,400,'Cash','Paid');
+
+SELECT * FROM Payments;
+
+-- ======================
+-- 11. DOCTOR SCHEDULE
+-- ======================
+CREATE TABLE Doctor_Schedule (
+    schedule_id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT,
+    available_day VARCHAR(20),
+    start_time TIME,
+    end_time TIME,
+    FOREIGN KEY (doctor_id) REFERENCES Doctors(doctor_id)
+);
+
+INSERT INTO Doctor_Schedule (doctor_id, available_day, start_time, end_time) VALUES
+(1,'Monday','09:00:00','12:00:00'),
+(2,'Tuesday','10:00:00','01:00:00'),
+(3,'Wednesday','11:00:00','02:00:00'),
+(4,'Thursday','12:00:00','03:00:00'),
+(5,'Friday','01:00:00','04:00:00');
+
+SELECT * FROM Doctor_Schedule;
