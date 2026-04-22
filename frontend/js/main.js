@@ -1,18 +1,22 @@
 fetch("navbar.html")
-  .then(response => response.text())
-  .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-      updateNavbar();
-  });
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+        updateNavbar();
+    });
 
 function updateNavbar() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const navLinks = document.getElementById("navLinks");
+    const authSection = document.getElementById("authSection");
+
+    if (!authSection) return;
+
+    const currentPath = window.location.pathname;
+    const isDashboardPage = currentPath.includes("dashboard");
 
     if (currentUser) {
 
-        // Decide dashboard based on role
-        let dashboardLink = "";
+        let dashboardLink = "index.html";
 
         if (currentUser.role === "patient") {
             dashboardLink = "patient-dashboard.html";
@@ -22,23 +26,35 @@ function updateNavbar() {
             dashboardLink = "admin-dashboard.html";
         }
 
-        navLinks.innerHTML = `
-            <a href="index.html">Home</a>
-            <a href="${dashboardLink}">Dashboard</a>
-            <a href="#" id="logoutBtn">Logout</a>
-        `;
-
-        document.getElementById("logoutBtn").addEventListener("click", function (e) {
-            e.preventDefault();
-            localStorage.removeItem("currentUser");
-            window.location.href = "loginRegister.html";
-        });
+        if (isDashboardPage) {
+            authSection.innerHTML = `
+                <a href="#" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            `;
+        } else {
+            authSection.innerHTML = `
+                <a href="${dashboardLink}">
+                    <i class="fa-solid fa-user-check"></i>
+                </a>
+            `;
+        }
 
     } else {
-
-        navLinks.innerHTML = `
-            <a href="loginRegister.html">Login</a>
-            <a href="register.html">Register</a>
+        authSection.innerHTML = `
+            <a href="loginRegister.html">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
         `;
     }
 }
+
+
+// 🔥 ADD THIS AT VERY BOTTOM (IMPORTANT)
+document.addEventListener("click", function (e) {
+    if (e.target.closest("#logoutBtn")) {
+        e.preventDefault();
+        localStorage.removeItem("currentUser");
+        window.location.href = "loginRegister.html";
+    }
+});

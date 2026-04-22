@@ -11,7 +11,14 @@
     align-items:center;
     background:#f9ad55;
     padding:10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
 }
+
 
 .logo{
     font-size:22px;
@@ -27,7 +34,10 @@
 
 .nav-links li{
     position:relative;
+     display: flex;
+    align-items: center;
 }
+
 
 .nav-links a{
     text-decoration:none;
@@ -42,6 +52,27 @@
 .navbar i{
     font-size:20px;
     color:white;
+}
+
+#authSection a {
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+#authSection i {
+    font-size: 18px;
+    color: white;
+}
+#logoutBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+#logoutBtn i {
+    color: rgb(246, 244, 244);   /* or dark blue */
 }
 /* Dropdown */
 

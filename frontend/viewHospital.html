@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/viewHospital.css">
+    
     <link rel="stylesheet" href="css/navBar.css">
-    <title>Document</title>
+
 </head>
+
 <body>
-    <div id="navbar"></div>
-    <section class="hero">
-        <h1>Book Doctor Appointments Online</h1>
-        <p>Easy, Fast & Secure Healthcare Services</p>
-        <a href="register.html" class="btn">Get Started</a>
-    </section>
- <script src="js/main.js"></script>
+<div id="navbar"></div>
+<!-- 🔹 Hospital Info -->
+<div id="hospitalInfo"></div>
+
+<!-- 🔹 Facilities -->
+<h2 class="section-title">Facilities</h2>
+<div id="facilities" class="facility-container"></div>
+
+<!-- 🔹 Doctors -->
+<h2 class="section-title">Available Doctors</h2>
+<div id="doctorList" class="doctor-container"></div>
+
+<script src="js/hospitals.js"></script>
+<script src="js/hospital-data.js"></script>
+<script src="js/doctor-data.js"></script>
+<script src="js/view-hospital.js"></script>
+<script src="js/find-doctor.js"></script>
+
+
+<script src="js/main.js"></script>
+
+
 </body>
 </html>

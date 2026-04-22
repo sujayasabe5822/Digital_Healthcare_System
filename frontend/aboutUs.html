@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Digital Healthcare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navBar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #f3b4b4, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 40px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #0077ff;
+            margin-bottom: 15px;
+        }
+
+        /* Cards */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 35px;
+            color: #0077ff;
+            margin-bottom: 10px;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .step {
+            background: #fff;
+            padding: 20px;
+            border-left: 5px solid #0077ff;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0077ff;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!-- Header -->
+    <header>
+        <h1>Digital Healthcare</h1>
+        <p>Your Smart Online Appointment Booking System</p>
+    </header>
+
+    <div class="container">
+
+        <!-- About -->
+        <section>
+            <h2>About Us</h2>
+            <p>
+                Digital Healthcare is an advanced platform that connects patients with hospitals and doctors.
+                It allows users to search hospitals, find doctors, and book appointments online easily without waiting in long queues.
+            </p>
+        </section>
+
+        <!-- Mission -->
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to make healthcare accessible, fast, and efficient by using digital technology.
+                We aim to simplify the healthcare experience for everyone.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section>
+            <h2>What We Offer</h2>
+            <div class="card-container">
+
+                <div class="card">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Hospital Search</h3>
+                    <p>Search hospitals by name or city and find the best healthcare centers near you.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Doctor Search</h3>
+                    <p>Find doctors by name or specialization like Dentist, Cardiologist, Eye Specialist.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Online Booking</h3>
+                    <p>Book appointments anytime without visiting the hospital physically.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Save Time</h3>
+                    <p>No more waiting in queues. Get fast and easy appointment scheduling.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section>
+            <h2>How It Works</h2>
+            <div class="steps">
+
+                <div class="step">
+                    <h3>1. Search Hospital</h3>
+                    <p>Find hospitals by entering name or city.</p>
+                </div>
+
+                <div class="step">
+                    <h3>2. Select Doctor</h3>
+                    <p>Choose a doctor based on name or specialty.</p>
+                </div>
+
+                <div class="step">
+                    <h3>3. Choose Date</h3>
+                    <p>Select available date and time slot.</p>
+                </div>
+
+                <div class="step">
+                    <h3>4. Book Appointment</h3>
+                    <p>Confirm your appointment instantly.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Vision -->
+        <section>
+            <h2>Our Vision</h2>
+            <p>
+                We believe in a future where healthcare is just a click away. 
+                Our goal is to provide a seamless digital healthcare experience for all users.
+            </p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Digital Healthcare System | All Rights Reserved</p>
+    </footer>
+<script src="js/main.js"></script>
+</body>
+</html>

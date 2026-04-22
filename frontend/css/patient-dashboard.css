@@ -1,0 +1,31 @@
+.form-container {
+    margin-top: 25px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 700px;
+    max-width: 90%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    position: relative;
+}
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    flex: 2;
+    background: red;
+    color: white;
+}
+
+.clear-btn {
+    flex: 1;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

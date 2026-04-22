@@ -15,6 +15,7 @@ function bookAppointment() {
 
     alert("Appointment Booked!");
     displayAppointments();
+    
 }
 
 function displayAppointments() {

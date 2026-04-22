@@ -1,0 +1,97 @@
+body {
+    font-family: Arial;
+    background: #0a1f44;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.form-container {
+    margin-top: 25px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 700px;
+    max-width: 90%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    overflow-y: auto;
+    position: fixed;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 30px;
+}
+
+/* Sections */
+.left-section,
+.right-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headings */
+h3 {
+    margin: 10px 0;
+    color: #0a1f44;
+}
+
+
+
+/* Button full width */
+
+
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.submit-btn {
+    flex: 2;
+    background: red;
+    color: white;
+}
+
+.clear-btn {
+    flex: 1;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* stack on mobile */
+    }
+}

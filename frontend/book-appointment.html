@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+    
+    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/book-appointment.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="form-container">
+    
+    <h2>Book Appointment</h2>
+
+    <form id="appointmentForm">
+
+    <div class="form-grid">
+
+        <!-- LEFT SIDE -->
+        <div class="left-section">
+            <h3>Doctor Details</h3>
+
+            <input type="text" id="doctorName" placeholder="Doctor Name">
+            <input type="text" id="speciality" placeholder="Speciality">
+            <input type="text" id="hospital" placeholder="Hospital">
+            <input type="number" id="fee" placeholder="Consultation Fee">
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right-section">
+
+            <h3>Patient Details</h3>
+            <input type="text" id="patientName" placeholder="Patient Name">
+            <input type="number" id="age" placeholder="Age">
+            <input type="text" id="address" placeholder="Address">
+            <input type="tel" id="mobile" placeholder="Mobile Number">
+            <input type="email" id="email" placeholder="Email (Optional)">
+
+            
+
+        </div>
+        
+
+    </div>
+
+    <div class="appointment-section">
+        <h3>Appointment Details</h3>
+
+        <div class="appointment-fields">
+            <input type="date" id="date">
+            <input type="time" id="time">
+        </div>
+    </div>
+
+    
+    <div class="btn-group">
+    <button type="submit" class="submit-btn">Confirm Appointment</button>
+    <button type="button" class="clear-btn" onclick="clearForm()">Clear</button>
+   </div>
+
+</form>
+    </div>
+
+    <script src="js/doctor-data.js"></script>
+    <script src="js/book-appointment.js"></script>
+    <script src="js/main.js"></script>
+    
+
+</body>
+</html>

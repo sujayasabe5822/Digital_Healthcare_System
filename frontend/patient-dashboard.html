@@ -1,37 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="css/patient-dashboard.css">
+
+
 </head>
+
 <body>
-<div id="navbar"></div>
-<div class="dashboard-container">
-    
-    <h2 style="color: white;">Patient Dashboard</h2>
 
-    <div class="card">
-        <h3>Book Appointment</h3>
+    <div id="navbar"></div>
 
-        <input type="text" id="doctorName" placeholder="Doctor Name">
-        <input type="date" id="date">
-        <input type="time" id="time">
-        <div class="btn-center">
+    <div class="dashboard-container">
 
-        <div class="btn-center">
-            <button class="small-btn"  onclick="bookAppointment()" >Book</button>
+        <h2 style="color: white;">Patient Dashboard</h2>
+
+        <!-- 🔥 BOOK APPOINTMENT SECTION -->
+        <div class="card">
+            <h3>Book Appointment</h3>
+
+            <!-- Button to load booking form -->
+            <div class="btn-center">
+                <button class="small-btn" id="toggleBtn" onclick="toggleBooking()">
+                    Open Booking Form
+                </button>
+            </div>
+
+            <!-- Injected HTML will come here -->
+            <div id="bookingContainer" style="margin-top: 15px;"></div>
         </div>
-        
-        
+
+        <!-- 🔥 APPOINTMENTS LIST -->
+        <div class="card">
+            <h3>Your Appointments</h3>
+            <div id="appointments"></div>
+        </div>
+
     </div>
-  
-</div>
-<div class="card">
-        <h3>Your Appointments</h3>
-        <div id="appointments"></div>
-    </div>
-<script src="js/patient.js"></script>
-<script src="js/main.js"></script>
+
+    <!-- ✅ SCRIPTS ORDER IMPORTANT -->
+    <script src="js/doctor-data.js"></script>
+    <script src="js/patient-data.js"></script>
+    <script src="js/patient.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/book-appointment.js"></script>
+    <script>
+        let isBookingOpen = false;
+
+        function toggleBooking() {
+            const container = document.getElementById("bookingContainer");
+            const button = document.getElementById("toggleBtn");
+
+            // 👉 If already open → CLOSE
+            if (isBookingOpen) {
+                container.innerHTML = "";
+                button.innerText = "Open Booking Form";
+                isBookingOpen = false;
+                return;
+            }
+
+            // 👉 If closed → OPEN
+            fetch("./book-appointment.html")
+                .then(res => {
+                    if (!res.ok) throw new Error("File not found");
+                    return res.text();
+                })
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+
+                    container.innerHTML = doc.body.innerHTML;
+
+                    button.innerText = "Close Booking Form";
+                    isBookingOpen = true;
+                })
+                .catch(err => {
+                    console.error(err);
+                    container.innerHTML = "<p style='color:red;'>Unable to load booking form</p>";
+                });
+        }
+    </script>
+
+
 </body>
+
 </html>

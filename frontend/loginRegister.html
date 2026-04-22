@@ -1,155 +1,159 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Login</title>
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/loginPage.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="css/navBar.css">
+<head>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loginPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/navBar.css">
 
 </head>
 
 <body>
 
-<div id="navbar"></div>
+    <div id="navbar"></div>
 
-<div class="login-wrapper">
+    <div class="login-wrapper">
 
-<div class="login-box">
+        <div class="login-box">
 
-<!-- LEFT PANEL -->
-<div class="left-panel">
-<img src="assets/images/login-bg.png">
-</div>
-
-
-<!-- RIGHT PANEL -->
-<div class="right-panel">
-
-<h1 id="formTitle">Welcome Back !</h1>
-
-<div class="tabs">
-
-<span id="loginTab" class="active" onclick="showLogin()">
-<i class="fa fa-sign-in"></i> Login
-</span>
-
-<span id="registerTab" onclick="showRegister()">
-<i class="fa fa-user-plus"></i> New User
-</span>
-
-</div>
-
-<!-- LOGIN FORM -->
-<div id="loginForm">
-
-<div class="input-group">
-<i class="fa fa-user"></i>
-<input type="text" id="loginEmail" placeholder="Username">
-</div>
-
-<div class="input-group">
-<i class="fa fa-lock"></i>
-<input type="password" id="loginPassword" placeholder="Password">
-</div>
-
-<div class="captcha-box">
-
-<div class="captcha-left">
-<input type="checkbox">
-<span>I'm not a robot</span>
-</div>
-
-<div class="captcha-right">
-<img src="assets/images/recaptcha.png">
-<p>reCAPTCHA<br>Privacy - Terms</p>
-</div>
-
-</div>
-
-<button class="login-btn" onclick="login()">LOGIN</button>
-
-<p class="forgot">Forgot Password ?</p>
-
-</div>
+            <!-- LEFT PANEL -->
+            <div class="left-panel">
+                <img src="assets/images/login-bg.png">
+            </div>
 
 
+            <!-- RIGHT PANEL -->
+            <div class="right-panel">
 
-<!-- REGISTER FORM -->
-<div id="registerForm" style="display:none">
+                <h1 id="formTitle">Welcome Back !</h1>
 
-<div class="input-group">
-<i class="fa fa-user"></i>
-<input type="text" id="name" placeholder="Full Name">
-</div>
+                <div class="tabs">
 
-<div class="input-group">
-<i class="fa fa-envelope"></i>
-<input type="email" id="email" placeholder="Email">
-</div>
+                    <span id="loginTab" class="active" onclick="showLogin()">
+                        <i class="fa fa-sign-in"></i> Login
+                    </span>
 
-<div class="input-group">
-<i class="fa fa-lock"></i>
-<input type="password" id="password" placeholder="Password">
-</div>
+                    <span id="registerTab" onclick="showRegister()">
+                        <i class="fa fa-user-plus"></i> New User
+                    </span>
 
-<div class="input-group">
-<i class="fa fa-user-tag"></i>
+                </div>
 
-<select id="role">
-<option value="patient">Patient</option>
-<option value="doctor">Doctor</option>
-<option value="admin">Admin</option>
-</select>
+                <!-- LOGIN FORM -->
+                <div id="loginForm">
 
-</div>
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" id="loginEmail" placeholder="Username">
+                    </div>
 
-<button class="login-btn" onclick="register()">REGISTER</button>
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password">
+                    </div>
 
-</div>
+                    <div class="captcha-box">
+
+                        <div class="captcha-left">
+                            <input type="checkbox">
+                            <span>I'm not a robot</span>
+                        </div>
+
+                        <div class="captcha-right">
+                            <img src="assets/images/recaptcha.png">
+                            <p>reCAPTCHA<br>Privacy - Terms</p>
+                        </div>
+
+                    </div>
+
+                    <button class="login-btn" onclick="login()">LOGIN</button>
+
+                    <p class="forgot">Forgot Password ?</p>
+
+                </div>
 
 
-</div>
 
-</div>
+                <!-- REGISTER FORM -->
+                <div id="registerForm" style="display:none">
 
-</div>
+                    <div class="input-group">
+                        <i class="fa fa-user"></i>
+                        <input type="text" id="name" placeholder="Full Name">
+                    </div>
 
-<script src="js/main.js"></script>
-<script src="js/auth.js"></script>
+                    <div class="input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
 
-<script>
+                    <div class="input-group">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
 
-function showRegister(){
+                    <div class="input-group">
+                        <i class="fa fa-user-tag"></i>
 
-document.getElementById("loginForm").style.display="none";
-document.getElementById("registerForm").style.display="block";
+                        <select id="role">
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="admin">Admin</option>
+                        </select>
 
-/* change heading */
-document.getElementById("formTitle").innerText="Register Yourself !";
+                    </div>
 
-/* change active tab */
-document.getElementById("loginTab").classList.remove("active");
-document.getElementById("registerTab").classList.add("active");
+                    <button class="login-btn" onclick="register()">REGISTER</button>
 
-}
+                </div>
 
-function showLogin(){
 
-document.getElementById("loginForm").style.display="block";
-document.getElementById("registerForm").style.display="none";
+            </div>
 
-/* change heading */
-document.getElementById("formTitle").innerText="Welcome Back !";
+        </div>
 
-/* change active tab */
-document.getElementById("registerTab").classList.remove("active");
-document.getElementById("loginTab").classList.add("active");
+    </div>
 
-}
+    <script src="js/main.js"></script>
+    <script src="js/doctor-data.js"></script>
+    <script src="js/patient-data.js"></script>
+    <script src="js/auth.js"></script>
 
-</script>
+    <script>
+
+        function showRegister() {
+
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+
+            /* change heading */
+            document.getElementById("formTitle").innerText = "Register Yourself !";
+
+            /* change active tab */
+            document.getElementById("loginTab").classList.remove("active");
+            document.getElementById("registerTab").classList.add("active");
+
+        }
+
+        function showLogin() {
+
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("registerForm").style.display = "none";
+
+            /* change heading */
+            document.getElementById("formTitle").innerText = "Welcome Back !";
+
+            /* change active tab */
+            document.getElementById("registerTab").classList.remove("active");
+            document.getElementById("loginTab").classList.add("active");
+
+        }
+
+    </script>
 
 </body>
+
 </html>

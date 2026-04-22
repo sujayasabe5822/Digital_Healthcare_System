@@ -86,7 +86,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 15px;
     color: #ffffff;
     margin-top: 10px;
 }
@@ -121,6 +121,7 @@ body {
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow-y: auto;
 }
 
 .card:hover {

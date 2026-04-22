@@ -1,0 +1,135 @@
+/* 🔹 Page spacing */
+body {
+    margin: 0;
+    padding-top: 50px;
+    
+}
+
+
+/* 🔹 Section titles */
+.section-title {
+    text-align: center;
+    color: #fff;
+    margin: 30px 0 15px;
+    font-weight: 600;
+}
+
+.hospital-card {
+    background: #ffffff;
+    color: #222;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+     margin: 80px auto 20px;
+    margin: 20px auto;
+    position: relative;
+    max-width: 900px;   /* better width */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 🔥 FIXED IMAGE */
+.hospital-card img {
+    width: 100%;              /* full width */
+    max-width: 700px;         /* control size */
+    height: 300px;            /* banner style */
+    object-fit: cover;        /* crop nicely */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Facilities Container */
+.facility-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/* 🔹 Facility Chips */
+.facility {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 🔹 Doctors Container */
+.doctor-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;   /* center cards */
+    padding-bottom: 40px;
+}
+
+/* 🔹 Doctor Card */
+.doctor-card {
+    width: 300px;   /* 🔥 increased width */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 Doctor Image */
+.doctor-card img {
+    width: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Text Styling */
+.spec {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.hospital {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 🔹 Details Row */
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* 🔹 Availability Colors */
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.busy {
+    color: red;
+    font-weight: bold;
+}
+
+/* 🔹 Button */
+.doctor-card button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.doctor-card button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}

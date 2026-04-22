@@ -25,20 +25,29 @@ function displayDoctors(list) {
                     </span>
                 </div>
 
-                <button onclick="bookDoctor('${doc.name}')"
-                    ${doc.availability === "Busy" ? "disabled" : ""}>
+                <button onclick='bookDoctor(${JSON.stringify(doc)})'
+                     ${doc.availability === "Busy" ? "disabled" : ""}>
                     Book Appointment
                 </button>
+
             </div>
         `;
     });
+}
+
+function bookDoctor(doc) {
+    // Save full doctor data
+    localStorage.setItem("selectedDoctor", JSON.stringify(doc));
+
+    // Redirect
+    window.location.href = "book-appointment.html";
 }
 
 // Search Function
 function searchDoctor() {
     const value = document.getElementById("searchInput").value.toLowerCase();
 
-    const filtered = doctors.filter(doc =>
+    const filtered = doctorsData.filter(doc =>
         doc.name.toLowerCase().includes(value) ||
         doc.speciality.toLowerCase().includes(value)
     );
@@ -47,4 +56,4 @@ function searchDoctor() {
 }
 
 // Initial Load
-displayDoctors(doctors);
+displayDoctors(doctorsData);

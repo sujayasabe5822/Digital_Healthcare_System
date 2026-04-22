@@ -1,6 +1,8 @@
-const doctors = [
+const doctorsData = [
     {
         name: "Dr. Amit Sharma",
+        username: "amitsharma@gmail.com",
+        password: "Pass@123",
         speciality: "Cardiologist",
         hospital: "Ruby Hall Clinic",
         experience: "12+ years",
@@ -11,6 +13,8 @@ const doctors = [
     },
     {
         name: "Dr. Priya Mehta",
+        username: "priyamehta@gmail.com",
+        password: "Pass@123",
         speciality: "Dermatologist",
         hospital: "Jehangir Hospital",
         experience: "9+ years",
@@ -21,6 +25,8 @@ const doctors = [
     },
     {
         name: "Dr. Rahul Patil",
+        username: "rahulpatil@gmail.com",
+        password: "Pass@123",
         speciality: "Orthopedic",
         hospital: "Sahyadri Hospital",
         experience: "15+ years",
@@ -31,6 +37,8 @@ const doctors = [
     },
     {
         name: "Dr. Sneha Kulkarni",
+        username: "snehakulkarni@gmail.com",
+        password: "Pass@123",
         speciality: "Gynecologist",
         hospital: "Aditya Birla Hospital",
         experience: "10+ years",
@@ -41,6 +49,8 @@ const doctors = [
     },
     {
         name: "Dr. Karan Joshi",
+        username: "karanjoshi@gmail.com",
+        password: "Pass@123",
         speciality: "Neurologist",
         hospital: "Ruby Hall Clinic",
         experience: "14+ years",
@@ -51,6 +61,8 @@ const doctors = [
     },
     {
         name: "Dr. Neha Deshmukh",
+        username: "nehadeshmukh@gmail.com",
+        password: "Pass@123",
         speciality: "Pediatrician",
         hospital: "Cloudnine Hospital",
         experience: "8+ years",
@@ -61,6 +73,8 @@ const doctors = [
     },
     {
         name: "Dr. Rohan Gupta",
+        username: "rohanggupta@gmail.com",
+        password: "Pass@123",
         speciality: "Dentist",
         hospital: "Apollo Clinic",
         experience: "11+ years",
@@ -71,6 +85,8 @@ const doctors = [
     },
     {
         name: "Dr. Pooja Verma",
+        username: "poojaverma@gmail.com",
+        password: "Pass@123",
         speciality: "ENT Specialist",
         hospital: "Fortis Hospital",
         experience: "13+ years",
@@ -81,6 +97,8 @@ const doctors = [
     },
     {
         name: "Dr. Vikram Singh",
+        username: "vikramsingh@gmail.com",
+        password: "Pass@123",
         speciality: "General Physician",
         hospital: "AIIMS",
         experience: "16+ years",
@@ -91,6 +109,8 @@ const doctors = [
     },
     {
         name: "Dr. Anjali Nair",
+        username: "anjalinair@gmail.com",
+        password: "Pass@123",
         speciality: "Psychiatrist",
         hospital: "Manipal Hospital",
         experience: "10+ years",
@@ -101,6 +121,8 @@ const doctors = [
     },
     {
         name: "Dr. Suresh Iyer",
+        username: "sureshiyer@gmail.com",
+        password: "Pass@123",
         speciality: "Oncologist",
         hospital: "Tata Memorial Hospital",
         experience: "18+ years",
@@ -111,6 +133,8 @@ const doctors = [
     },
     {
         name: "Dr. Kavita Shah",
+        username: "kavitashah@gmail.com",
+        password: "Pass@123",
         speciality: "Endocrinologist",
         hospital: "Hiranandani Hospital",
         experience: "12+ years",
@@ -121,6 +145,8 @@ const doctors = [
     },
     {
         name: "Dr. Arjun Reddy",
+        username: "arjunreddy@gmail.com",
+        password: "Pass@123",
         speciality: "Pulmonologist",
         hospital: "Care Hospitals",
         experience: "14+ years",
@@ -131,6 +157,8 @@ const doctors = [
     },
     {
         name: "Dr. Meera Kapoor",
+        username: "meerakapoor@gmail.com",
+        password: "Pass@123",
         speciality: "Ophthalmologist",
         hospital: "Eye7 Hospital",
         experience: "9+ years",
@@ -141,6 +169,8 @@ const doctors = [
     },
     {
         name: "Dr. Nitin Agarwal",
+        username: "nitinagarwal@gmail.com",
+        password: "Pass@123",
         speciality: "Urologist",
         hospital: "Medanta Hospital",
         experience: "17+ years",
@@ -151,6 +181,8 @@ const doctors = [
     },
     {
         name: "Dr. Shweta Joshi",
+        username: "shwetajoshi@gmail.com",
+        password: "Pass@123",
         speciality: "Radiologist",
         hospital: "Max Healthcare",
         experience: "11+ years",
@@ -161,6 +193,8 @@ const doctors = [
     },
     {
         name: "Dr. Deepak Chavan",
+        username: "deepakchavan@gmail.com",
+        password: "Pass@123",
         speciality: "Nephrologist",
         hospital: "Kokilaben Hospital",
         experience: "15+ years",
@@ -171,6 +205,8 @@ const doctors = [
     },
     {
         name: "Dr. Ritu Malhotra",
+        username: "ritumalhotra@gmail.com",
+        password: "Pass@123",
         speciality: "Dietician",
         hospital: "Apollo Hospital",
         experience: "7+ years",
@@ -181,6 +217,8 @@ const doctors = [
     },
     {
         name: "Dr. Manish Yadav",
+        username: "manishyadav@gmail.com",
+        password: "Pass@123",
         speciality: "Surgeon",
         hospital: "Lilavati Hospital",
         experience: "19+ years",
@@ -191,6 +229,8 @@ const doctors = [
     },
     {
         name: "Dr. Ayesha Khan",
+        username: "ayeshakhan@gmail.com",
+        password: "Pass@123",
         speciality: "Physiotherapist",
         hospital: "Physiocare Clinic",
         experience: "8+ years",
